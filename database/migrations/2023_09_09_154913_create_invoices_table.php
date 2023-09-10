@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('invoice_event_id');
             $table->string('title');
             $table->string('amount');
+            $table->tinyInteger('status')->default(0);
             $table->tinyInteger('is_paid')->default(0);
             $table->timestamps();
         });

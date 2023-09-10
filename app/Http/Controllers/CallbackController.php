@@ -26,8 +26,6 @@ class CallbackController extends Controller
             ]);
 
             if ($request->request->get('external_id') != "") {
-                //check if external_id contains KOMTIM prefix
-                //which is KOMTIM prefix used to be new Invoice External ID format
                 $checkExternalId = strpos($request->request->get('external_id'), "KOMTIM");
                 if ($checkExternalId !== false) {
                     //curl to new callback goes here
@@ -41,7 +39,7 @@ class CallbackController extends Controller
             }
 
             $status = $validateData['status'];
-            $invoice = Invoice::where('invoice_xendit_id', $validateData['id'])->firstorFail();
+            $invoice = Invoice::where('invoice_xendit_id', $validateData['id'])->first();
 
             if ($invoice != null) {
                 switch ($status) {

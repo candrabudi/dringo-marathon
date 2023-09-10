@@ -13,7 +13,7 @@ class CallbackController extends Controller
     {
         try {
             $callback_token = $request->header('x-callback-token');
-            if ($callback_token != env('X_CALLBACK_TOKEN')) {
+            if ($callback_token != env('XENDIT_CALLBACK_KEY')) {
                 return response()->json([
                     'status' => false,
                     'code' => 401,

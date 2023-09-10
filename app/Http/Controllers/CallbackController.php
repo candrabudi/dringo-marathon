@@ -42,20 +42,21 @@ class CallbackController extends Controller
             $invoice = Invoice::where('invoice_xendit_id', $validateData['id'])->first();
 
             if ($invoice != null) {
-                switch ($status) {
-                    case "PAID":
-                        $invoice->status = 2;
-                        $invoice->is_paid = true;
-                        $invoice->save();
-                        break;
-                    case "EXPIRED":
-                        if ($invoice->status != 2) {
-                            $invoice->status = 3;
-                            $invoice->save();
-                        }
-                        break;
-                    default:
-                        break;
+                if($status == "PAID"){
+                    Invoice::where('invoice_xendit_id', $validateData['id'])->update([
+                        'is_paid' => 1,
+                        'status' => 1
+                    ]);
+                }else if($status == "EXPIRED"){
+                    Invoice::where('invoice_xendit_id', $validateData['id'])->update([
+                        'is_paid' => 0,
+                        'status' => 2
+                    ]);
+                }else{
+                    return response()->json([
+                        'status' => false,
+                        'code' => 200,
+                    ], 200);
                 }
                 return response()->json([
                     'status' => true,

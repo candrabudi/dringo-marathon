@@ -17,4 +17,3 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [EventRegisterController::class, 'index']);
 Route::post('/participant/register', [EventRegisterController::class, 'register'])->name('participant.register');
-Route::post('/callback/invoice-xendit', [EventRegisterController::class, 'receiveXenditInvoiceCallback'])->name('receiveXenditInvoiceCallback');

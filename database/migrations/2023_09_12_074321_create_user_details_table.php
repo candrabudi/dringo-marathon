@@ -11,16 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('invoices', function (Blueprint $table) {
+        Schema::create('user_details', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->string('invoice_xendit_url');
-            $table->string('invoice_xendit_id');
-            $table->string('invoice_event_id');
-            $table->string('title');
-            $table->string('amount');
-            $table->tinyInteger('status')->default(0);
-            $table->tinyInteger('is_paid')->default(0);
+            $table->string('nik');
+            $table->string('birth_place');
+            $table->date('birth_date');
+            $table->text('address');
+            $table->enum('category', ['Pelajar', 'Umum']);
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('invoices');
+        Schema::dropIfExists('user_details');
     }
 };

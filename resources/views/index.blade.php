@@ -121,14 +121,107 @@
         </div>
     </div>
 
-    <section class="features section" id="about">
+    <section>
+        <div class="contact-us section">
+            <div class="container">
+                <div class="inner-content">
+                    <div class="row">
+                        <div class="col-lg-6 col-12">
+                            <div class="contact-widget-wrapper">
+                                <div class="main-title">
+                                    <h2>
+                                        Butuh Bantuan dalam pendaftaran ?
+                                    </h2>
+                                    <p>Hubungi kami jika kamu mengalami kendala dalam pendaftaran untuk mengikuti dringo marathon.</p>
+                                </div>
+                                <div class="contact-widget-block">
+                                    <h3 class="title">Nomor Whatsapp</h3>
+                                    <p>+62 812-2960-6746</p>
+                                </div>
+                                <div class="contact-widget-block">
+                                    <h3 class="title">Email us</h3>
+                                    <p>serayunews@mail.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="contact-form">
+                                <form class="form" method="post" action="{{route('participant.register')}}">
+                                    @csrf
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <div class="form-group">
+                                                <input name="email" type="email" placeholder="Masukan Email" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-12">
+                                            <div class="form-group">
+                                                <input name="password" type="password" placeholder="Masukan Password" required="required">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <div class="form-group">
+                                                <input name="nik" type="text" placeholder="Masukan NIK Kamu" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-12">
+                                            <div class="form-group">
+                                                <input name="name" type="text" placeholder="Masukan Nama" required="required">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-lg-12 col-12">
+                                            <div class="form-group">
+                                                <select name="category" class="form-control" required id="">
+                                                    <option value="">Pilih Kategori</option>
+                                                    <option value="Pelajar">Pelajar (SMP/SMA/SMK)</option>
+                                                    <option value="Umum">Umum (Mahasiswa/Umum)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-lg-6 col-12">
+                                            <div class="form-group">
+                                                <input name="birth_place" type="text" placeholder="Masukan Tempat Lahir" required="required">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-12">
+                                            <div class="form-group">
+                                                <input name="birth_date" type="date" placeholder="Masukan Tanggal Lahir" required="required">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <textarea placeholder="Masukan Alamat Kamu" name="address" id="message-area" class="form-control"></textarea>
+                                    </div>
+                                    <div class="button">
+                                        <button type="submit" class="btn ">Daftar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features section mt-5" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
                         <h3 class="wow zoomIn" data-wow-delay=".2s">Tentang Pendaftaran ?</h3>
                         <h2 class="wow fadeInUp" data-wow-delay=".4s">Pendaftaran Peserta</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">Pendaftaran akan dimulai pada tanggal 15 September - 15 Oktober 2023 </p>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Pendaftaran akan dimulai pada tanggal 15 September - 20 Oktober 2023 </p>
                     </div>
                 </div>
             </div>
@@ -257,89 +350,6 @@
         </div>
     </section>
 
-    <section>
-        <div class="contact-us section">
-            <div class="container">
-                <div class="inner-content">
-                    <div class="row">
-                        <div class="col-lg-6 col-12">
-                            <div class="contact-widget-wrapper">
-                                <div class="main-title">
-                                    <h2>
-                                        Butuh Bantuan dalam pendaftaran ?
-                                    </h2>
-                                    <p>Hubungi kami jika kamu mengalami kendala dalam pendaftaran untuk mengikuti dringo marathon.</p>
-                                </div>
-                                <div class="contact-widget-block">
-                                    <h3 class="title">Nomor Whatsapp</h3>
-                                    <p>+62 812-2960-6746</p>
-                                </div>
-                                <div class="contact-widget-block">
-                                    <h3 class="title">Email us</h3>
-                                    <p>serayunews@mail.com</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-12">
-                            <div class="contact-form">
-                                <form class="form" method="post" action="{{route('participant.register')}}">
-                                    @csrf
-                                    <div class="row">
-                                        <div class="col-lg-12 col-12">
-                                            <div class="form-group">
-                                                <input name="nik" type="text" placeholder="Masukan NIK Kamu" required="required">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6 col-12">
-                                            <div class="form-group">
-                                                <input name="name" type="text" placeholder="Masukan Nama Kamu" required="required">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-12">
-                                            <div class="form-group">
-                                                <input name="email" type="email" placeholder="Masukan Email" required="required">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6 col-12">
-                                            <div class="form-group">
-                                                <input name="birth_place" type="text" placeholder="Masukan Tempat Lahir" required="required">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-12">
-                                            <div class="form-group">
-                                                <input name="birth_date" type="date" placeholder="Masukan Tanggal Lahir" required="required">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <textarea placeholder="Masukan Alamat Kamu" name="address" id="message-area" class="form-control"></textarea>
-                                    </div>
-                                    <div class="button">
-                                        <button type="submit" class="btn ">Daftar</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="map-section">
-        <div class="map-container">
-            <div class="mapouter">
-                <div class="gmap_canvas"><iframe width="100%" height="500" id="gmap_canvas" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.6930142348433!2d110.0051484!3d-7.1571427!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e700e737a630c59%3A0x57aed7a71c12a2b9!2sTelaga%20Dringo!5e0!3m2!1sen!2sid!4v1631179873358!5m2!1sen!2sid" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.com">123movies old site</a>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <footer class="footer mt-5">
         <di class="copyright">
             <div class="container">
@@ -405,7 +415,7 @@
         });
     </script>
     <script>
-        const finaleDate = new Date("October 15, 2023 00:00:00").getTime();
+        const finaleDate = new Date("October 29, 2023 00:00:00").getTime();
 
         const timer = () => {
             const now = new Date().getTime();

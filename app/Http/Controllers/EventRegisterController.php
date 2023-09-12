@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Http;
 use Alert;
 use App\Models\Invoice;
 use App\Models\Participant;
+use App\Models\User;
+use App\Models\UserDetail;
 use Validator;
 use DB;
 
@@ -26,6 +28,7 @@ class EventRegisterController extends Controller
                 'nik' => 'required',
                 'name' => 'required',
                 'email' => 'required',
+                'password' => 'required',
                 'birth_place' => 'required',
                 'birth_date' => 'required',
                 'address' => 'required',
@@ -40,50 +43,25 @@ class EventRegisterController extends Controller
                     ->withErrors($validator->errors());
             }
 
-            $apiURL = 'https://api.xendit.co/v2/invoices';
-                    
-            $postInput = [
-                    "external_id" => "invoice-".time(),
-                    "amount" => 155000,
-                    "payer_email" => $request->email,
-                    "description" => "Invoice Dringo Marathon Atas Nama ".$request->name
-            ];
+            $user = new User();
+            $user->name = $request->name;
+            $user->email =$request->email;
+            $user->password = bcrypt($request->password);
+            $user->save();
+            $user->fresh();
 
-            $headers = [
-                'Authorization' => "Basic ".env('XENDIT_API_KEY')
-            ];
+            $user_detail = new UserDetail();
+            $user_detail->user_id = $user->id;
+            $user_detail->nik = $request->nik;
+            $user_detail->birth_date = $request->birth_date;
+            $user_detail->birth_place = $request->birth_place;
+            $user_detail->address = $request->address;
+            $user_detail->category = $request->category; 
+            $user_detail->save();
 
-            $response = Http::withHeaders($headers)->post($apiURL, $postInput);
+            Alert::success('Hore', 'Kamu Sudah Mendaftar Dringo Marathon!');
+            return redirect()->route('login');
 
-            $statusCode = $response->status();
-            if($statusCode != 200){
-                Alert::error('Yah', 'Maaf ada kesalahan, Tidak Bisa Membuat Invoice');
-                return redirect()
-                ->back()
-                ->withInput();
-            }
-            $responseBody = json_decode($response->getBody(), true);
-
-            $register = new Participant();
-            $register->nik = $request->nik;
-            $register->name = $request->name;
-            $register->email = $request->email;
-            $register->birth_place = $request->birth_place;
-            $register->birth_date = $request->birth_date;
-            $register->address = $request->address;
-            $register->save();
-            $register->fresh();
-            
-            $invoice = new Invoice();
-            $invoice->participant_id = $register->id;
-            $invoice->invoice_xendit_url = $responseBody['invoice_url'];
-            $invoice->invoice_xendit_id = $responseBody['id'];
-            $invoice->invoice_event_id = $responseBody['external_id'];
-            $invoice->title = "Invoice Dringo Marathon Atas Nama ".$request->name;
-            $invoice->amount = "155000";
-            $invoice->save();
-            Alert::error('Hore', 'Kamu Sudah Mendaftar Dringo Marathon!');
-            return redirect()->to($responseBody['invoice_url']);
         }catch(\Exception $e){
             DB::rollback();
             Alert::error('Yah', 'Maaf ada kesalahan internal '.$e->getMessage());

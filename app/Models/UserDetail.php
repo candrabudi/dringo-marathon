@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class UserDetail extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nik',
+        'phone_number',
+        'gender',
+        'birth_date',
+        'birth_place',
+        'address',
+        'category',
+    ];
+
 }

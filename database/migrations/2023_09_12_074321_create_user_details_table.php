@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->integer('user_id');
             $table->string('nik');
+            $table->string('phone_number');
+            $table->enum('gender', ['Laki-laki', 'Perempuan']);
             $table->string('birth_place');
             $table->date('birth_date');
             $table->text('address');

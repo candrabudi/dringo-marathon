@@ -61,7 +61,7 @@
                                 </ul>
                             </div>
                             <div class="button">
-                                <a href="https://wa.me/6281229606746" target="_blank" class="btn">Daftar Sekarang<i class="lni lni-ticket"></i></a>
+                                <a href="{{route('login')}}" target="_blank" class="btn">Masuk<i class="lni lni-ticket"></i></a>
                             </div>
                         </nav>
                     </div>
@@ -84,7 +84,7 @@
                         <h2 class="wow fadeInUp" data-wow-delay=".4s">Pelaksanaan lomba dilakukan pada, Minggu 29 Oktober 2023</h2>
                         <p class="wow fadeInUp" data-wow-delay=".6s">Kategori Pelajar SMP dan SMA Putra Putri, <br> Mahasiswa dan Umum Putra dan Putri.</p>
                         <div class="button wow fadeInUp" data-wow-delay=".8s">
-                            <a href="https://wa.me/6281229606746" target="_blank" class="btn ">Beli Tiket</a>
+                            <a href="#contact-us" class="btn ">Beli Tiket</a>
                         </div>
                     </div>
                 </div>
@@ -121,7 +121,7 @@
         </div>
     </div>
 
-    <section>
+    <section id="contact-us">
         <div class="contact-us section">
             <div class="container">
                 <div class="inner-content">
@@ -160,6 +160,13 @@
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-lg-12 col-12">
+                                            <div class="form-group">
+                                                <input name="phone_number" type="text" placeholder="Masukan Nomor Handphone" required="required">
+                                            </div>
+                                        </div>
+                                    </div>
 
                                     <div class="row">
                                         <div class="col-lg-6 col-12">
@@ -175,12 +182,21 @@
                                     </div>
 
                                     <div class="row">
-                                        <div class="col-lg-12 col-12">
+                                        <div class="col-lg-6 col-12">
                                             <div class="form-group">
                                                 <select name="category" class="form-control" required id="">
                                                     <option value="">Pilih Kategori</option>
                                                     <option value="Pelajar">Pelajar (SMP/SMA/SMK)</option>
                                                     <option value="Umum">Umum (Mahasiswa/Umum)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-12">
+                                            <div class="form-group">
+                                                <select name="gender" class="form-control" required id="">
+                                                    <option value="">Jenis Kelamin</option>
+                                                    <option value="Laki-laki">Laki-laki</option>
+                                                    <option value="Perempuan">Perempuan</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -206,6 +222,63 @@
                                         <button type="submit" class="btn ">Daftar</button>
                                     </div>
                                 </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq section mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3 class="wow zoomIn" data-wow-delay=".2s">Faq</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Bantuan Pendaftaran</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Masih bingung cara daftarnya ? dibawah ini ada langkah-langkah pendaftaran.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item mt-3">
+                            <h2 class="accordion-header" id="heading1">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+                                    <span class="title">Bagaimana cara daftarnya ?</span>
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>kamu bisa mengisi form diatas, lebih tepatnya setelah countdown, dengan mengisi beberapa biodata diri untuk melakukan pendaftaran</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mt-3">
+                            <h2 class="accordion-header" id="heading2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                    <span class="title">Apa yang harus dilakukan setelah mendaftar ?</span>
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>kamu bisa pergi ke halaman login, ada beberapa tombol login yang bisa kamu gunakan untuk masuk dan melakukan pembayaran
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item mt-3">
+                            <h2 class="accordion-header" id="heading3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                    <span class="title">Setelah melakukan pembayaran apa yang harus saya lakukan ?</span>
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <p>Setelah pembayaran kamu bisa screenshoot, download atau print invoice, dan tunjukan kepada panitia bahwa kamu sudah mendaftar dan bisa mengambil beberapa merchant dari panitia </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -338,11 +411,11 @@
                             <h5 class="wow zoomIn" data-wow-delay=".2s">Hurry Up!</h5>
                             <h2 class="wow fadeInUp" data-wow-delay=".4s">Bergabunglah di Dringo Marathon dan Lari Bersama!
                             </h2>
-                            <p class="wow fadeInUp" data-wow-delay=".4s">Pendaftaran Mulai Tanggal 15 September - 15 Oktober 2023</p>
+                            <p class="wow fadeInUp" data-wow-delay=".4s">Pendaftaran Mulai Tanggal 15 September - 20 Oktober 2023</p>
                             <p class="wow fadeInUp" data-wow-delay=".6s">mengajak masyarakt untuk ambil bagian dalam acara Dringo Marathon yang tidak hanya tentang lari, tetapi juga tentang mengambil tindakan untuk menjaga kesehatan dan kebugaran.</p>
                         </div>
                         <div class="button wow fadeInUp" data-wow-delay=".8s">
-                            <a href="https://wa.me/6281229606746" target="_blank" class="btn">Daftar Sekarang<i class="lni lni-ticket"></i></a>
+                            <a href="#contact-us" class="btn">Daftar Sekarang<i class="lni lni-ticket"></i></a>
                         </div>
                     </div>
                 </div>

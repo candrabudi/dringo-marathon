@@ -22,14 +22,10 @@
                             @if($check_invoice->is_paid == 1)
                                 <p>Silahkan tunjukan invoice ini ke loket pendaftaran, untuk ditukarkan dengan jersey, tiket wisata disekitar area dieng, dan nomor dada.</p>
                                 <p>Penukaran dilakukan tanggal 28 Oktober 2023</p>
-                                <a href="{{route('download_invoice')}}" target="_blank" class="btn btn-sm btn-outline-success">Download PDF</a>
                             @else
                                 <p class="mb-4">
                                     Silahkan melakukan pembayaran, untuk menyelesaikan pendaftaran dengan biaya sebesar <b>{{ Auth::user()->userDetail->category == "Pelajar" ? "Rp 100.000" : "Rp 150.000" }}</b>
                                 </p>
-                                <a href="{{$check_invoice->invoice_xendit_url}}" target="_blank" class="btn btn-sm btn-outline-danger">
-                                    Bayar Sekarang
-                                </a>
                             @endif
                         @endif
                     </div>
@@ -124,6 +120,7 @@
                                 </table>
                             </div>
                         </div>
+                        @if($check_invoice->is_paid == 1)
                         <div class="col-sm-12 mt-3 text-start">
                             <p class=""><i>Note:</i></p>
                             <div class="demo-inline-spacing mt-3">
@@ -146,6 +143,16 @@
                                 </ul>
                             </div>
                         </div>
+                        <div class="d-grid gap-2 col-lg-12 mx-auto mt-3">
+                            <a href="{{route('download_invoice')}}" target="_blank" style="width: 100%;display:block;" class="btn btn-lg btn-outline-success">Download Invoice</a>
+                        </div>
+                        @else
+                        <div class="d-grid gap-2 col-lg-12 mx-auto mt-3">
+                            <a href="{{$check_invoice->invoice_xendit_url}}" target="_blank" class="btn btn-lg btn-outline-danger mt-3">
+                                Bayar Sekarang
+                            </a>
+                        </div>
+                        @endif
                     </div>
                 </div>
             </div>

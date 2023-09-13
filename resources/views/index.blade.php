@@ -58,10 +58,12 @@
                                     <li class="nav-item">
                                         <a href="#sponsor" aria-label="Toggle navigation">Sponsor</a>
                                     </li>
+                                    <li>
+                                    </li>
                                 </ul>
-                            </div>
-                            <div class="button">
-                                <a href="{{route('login')}}" target="_blank" class="btn">Masuk<i class="lni lni-ticket"></i></a>
+                                <div class="button-login">
+                                    <a href="{{route('login')}}" target="_blank" class="btn">Login&nbsp;<i class="lni lni-ticket"></i></a>
+                                </div>
                             </div>
                         </nav>
                     </div>
@@ -84,7 +86,7 @@
                         <h2 class="wow fadeInUp" data-wow-delay=".4s">Pelaksanaan lomba dilakukan pada, Minggu 29 Oktober 2023</h2>
                         <p class="wow fadeInUp" data-wow-delay=".6s">Kategori Pelajar SMP dan SMA Putra Putri, <br> Mahasiswa dan Umum Putra dan Putri.</p>
                         <div class="button wow fadeInUp" data-wow-delay=".8s">
-                            <a href="#contact-us" class="btn ">Beli Tiket</a>
+                            <a href="#contact-us" class="btn ">Daftar Sekarang</a>
                         </div>
                     </div>
                 </div>

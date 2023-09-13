@@ -1372,6 +1372,26 @@ ol {
           box-shadow: 0px 4px 7px #00000021;
 }
 
+.button-login .btn {
+  display: inline-block;
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 15px 30px;
+  background-color: #1f75c0;
+  color: #fff;
+  border: none;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+  margin-right: 7px;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 4px 7px #00000021;
+          box-shadow: 0px 4px 7px #00000021;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .button .btn {
     padding: 14px 25px;
@@ -1411,6 +1431,29 @@ ol {
   color: #fff !important;
 }
 
+.button-login .btn i {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.button-login .btn:last-child {
+  margin: 0;
+}
+
+.button-login .btn:hover {
+  color: #fff;
+  background-color: #3fa1e0;
+}
+
+.button-login {
+  margin-left: 0 !important;
+}
+
+.button-login .btn-alt {
+  background-color: #3fa1e0 !important;
+  color: #fff !important;
+}
+
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .button .btn-alt {
     padding: 14px 25px;
@@ -1428,6 +1471,11 @@ ol {
 }
 
 .button .btn-alt:hover {
+  background-color: #1f75c0 !important;
+  color: #fff !important;
+}
+
+.button-login .btn-alt:hover {
   background-color: #1f75c0 !important;
   color: #fff !important;
 }

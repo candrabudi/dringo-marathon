@@ -1,83 +1,156 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if(empty($check_invoice))
-                    <div class="alert alert-success" role="alert">
-                        <h4 class="alert-heading">Ketentuan Pendaftaran!</h4>
-                        <p>Silahkan melakukan pembayaran, untuk menyelesaikan pendaftaran dengan biaya sebesar <b>{{ Auth::user()->userDetail->category == "Pelajar" ? "Rp 100.000" : "Rp 150.000" }}</b></p>
+<div class="row">
+    <div class="col-lg-6 mb-4 order-0">
+        <div class="card">
+            <div class="d-flex align-items-end row">
+                <div class="col-sm-7">
+                    <div class="card-body">
+                        <h5 class="card-title text-primary">Selamat {{Auth::user()->name}}! 🎉</h5>
+                        @if(empty($check_invoice))
+                        <p class="mb-4">
+                            Silahkan melakukan pembayaran, untuk menyelesaikan pendaftaran dengan biaya sebesar <b>{{ Auth::user()->userDetail->category == "Pelajar" ? "Rp 100.000" : "Rp 150.000" }}</b>
+                        </p>
+                        <form action="{{route('create_invoice')}}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-sm btn-outline-primary">
+                                Daftar Sekarang
+                            </button>
+                        </form>
+                        @else
+                            @if($check_invoice->is_paid == 1)
+                                <p>Silahkan tunjukan invoice ini ke loket pendaftaran, untuk ditukarkan dengan jersey, tiket wisata disekitar area dieng, dan nomor dada.</p>
+                                <p>Penukaran dilakukan tanggal 28 Oktober 2023</p>
+                                <a href="{{route('download_invoice')}}" target="_blank" class="btn btn-sm btn-outline-success">Download PDF</a>
+                            @else
+                                <p class="mb-4">
+                                    Silahkan melakukan pembayaran, untuk menyelesaikan pendaftaran dengan biaya sebesar <b>{{ Auth::user()->userDetail->category == "Pelajar" ? "Rp 100.000" : "Rp 150.000" }}</b>
+                                </p>
+                                <a href="{{$check_invoice->invoice_xendit_url}}" target="_blank" class="btn btn-sm btn-outline-danger">
+                                    Bayar Sekarang
+                                </a>
+                            @endif
+                        @endif
                     </div>
-                    <form action="{{route('create_invoice')}}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-primary">
-                            Daftar Sekarang
-                        </button>
-                    </form>
-                    @else
-                    @if($check_invoice->is_paid == 1)
-                    <div class="alert alert-success" role="alert">
-                        <h4 class="alert-heading">Hore kamu sudah mendaftar!</h4>
-                        <p>Silahkan tunjukan invoice ini ke loket pendaftaran, untuk ditukarkan dengan jersey, tiket wisata disekitar area dieng, dan nomor dada.</p>
-                        <p>Penukaran dilakukan tanggal 28 Oktober 2023</p>
+                </div>
+                <div class="col-sm-5 text-center text-sm-left">
+                    <div class="card-body pb-0 px-0 px-md-4">
+                        <img src="backend/img/illustrations/man-with-laptop-light.png" height="140" alt="View Badge User" data-app-dark-img="illustrations/man-with-laptop-dark.png" data-app-light-img="illustrations/man-with-laptop-light.png" />
                     </div>
-                    @else
-                    <div class="alert alert-success" role="alert">
-                        <h4 class="alert-heading">Ketentuan Pendaftaran!</h4>
-                        <p>Silahkan melakukan pembayaran, untuk menyelesaikan pendaftaran dengan biaya sebesar <b>{{ Auth::user()->userDetail->category == "Pelajar" ? "Rp 100.000" : "Rp 150.000" }}</b></p>
-                    </div>
-                    @endif
-                    <div class="container">
-                        <div class="container-invoice">
-                            <div class="invoice">
-                                <header>
-                                    <section>
-                                        <img src="{{asset('assets/images/logo/logo-dringo.jpeg')}}" width="100" alt="">
-                                        <h1>Invoice</h1>
-                                        <span>{{\Carbon\Carbon::parse($check_invoice->created_at)->format('d/m/Y')}}</span>
-                                    </section>
-                                </header>
-
-                                <main>
-                                    <section>
-                                        <span>Tipe Daftar</span>
-                                        <span>Total</span>
-                                        <span>Harga</span>
-                                    </section>
-
-                                    <section>
-                                        <figure>
-                                            <span>Pendaftar Umum</span>
-                                            <span>1</span>
-                                            <span>{{ Auth::user()->userDetail->category == "Pelajar" ? "Rp " . number_format(100000,0,',','.') : "Rp " . number_format(150000,0,',','.') }}</span>
-                                        </figure>
-                                    </section>
-
-                                    <section>
-                                        <span>Total</span>
-                                        <span>{{ Auth::user()->userDetail->category == "Pelajar" ? "Rp " . number_format(100000,0,',','.') : "Rp " . number_format(150000,0,',','.') }}</span>
-                                    </section>
-                                </main>
-
-                                <footer>
-                                    @if($check_invoice->is_paid == 0)
-                                        <a href="{{$check_invoice->invoice_xendit_url}}" class="btn btn-success" target="_blank">Bayar Invoice</a>
-                                    @else
-                                    <a href="{{route('download_invoice')}}" target="_blank" class="btn btn-primary">Download PDF</a>
-                                    @endif
-                                </footer>
-                            </div>
-                        </div>
-                    </div>
-                    @endif
                 </div>
             </div>
         </div>
     </div>
+    @if($check_invoice)
+    <div class="col-lg-6 mb-4 order-0">
+        <div class="card">
+            <div class="d-flex align-items-end row">
+                <div class="col-sm-12">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <img src="{{asset('assets/images/logo/logo-dringo.jpeg')}}" class="d-flex align-items-center" style="width:120px" alt="">
+                            <h1 class="flex-row align-items-center ms-auto">
+                                INVOICE
+                            </h1>
+                        </div>
+                        <div class="col-sm-8 ms-auto text-end text-sm-left">
+                            <div class="card-body pb-0 px-0 px-md-4">
+                                <table class="table table-borderless">
+                                    <tbody>
+                                        <tr>
+                                            <td class=""><span class="fw-semibold">INVOICE ID : </span></td>
+                                            <td class=" py-3">
+                                                <h5 class="mb-0">{{$check_invoice->invoice_event_id}}</h5>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class=""><span class="fw-semibold">DATE : </span></td>
+                                            <td class=" py-3">
+                                                <h5 class="mb-0">{{\Carbon\Carbon::parse($check_invoice->created_at)->format('d/m/Y')}}</h5>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 text-start">
+                            <div class="card-body pb-0 px-0 px-md-4">
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">NIK</li>
+                                    <li class="list-inline-item">:</li>
+                                    <li class="list-inline-item">{{Auth::user()->userDetail->nik}}</li>
+                                </ul>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">NAMA</li>
+                                    <li class="list-inline-item">:</li>
+                                    <li class="list-inline-item">{{Auth::user()->name}}</li>
+                                </ul>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">J KELAMIN</li>
+                                    <li class="list-inline-item">:</li>
+                                    <li class="list-inline-item">{{Auth::user()->userDetail->gender}}</li>
+                                </ul>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">KATEGORI</li>
+                                    <li class="list-inline-item">:</li>
+                                    <li class="list-inline-item">{{Auth::user()->userDetail->category}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 text-start">
+                            <div class="card-body pb-0 px-0 px-md-4">
+                                <table class="table">
+                                    <thead style="background-color: #00a8ff;">
+                                        <tr>
+                                            <th style="color: #fff" class="text-center">ITEM</th>
+                                            <th style="color: #fff" class="text-center">PRICE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                DIENG MARATHON KATEGORI {{Auth::user()->userDetail->category}}
+                                            </td>
+                                            <td class="text-end">{{ Auth::user()->userDetail->category == "Pelajar" ? "Rp " . number_format(100000,0,',','.') : "Rp " . number_format(150000,0,',','.') }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                Total
+                                            </td>
+                                            <td class="text-end">{{ Auth::user()->userDetail->category == "Pelajar" ? "Rp " . number_format(100000,0,',','.') : "Rp " . number_format(150000,0,',','.') }}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 mt-3 text-start">
+                            <p class=""><i>Note:</i></p>
+                            <div class="demo-inline-spacing mt-3">
+                                <ul>
+                                    <li>
+                                        <i>
+                                            Tunjukan invoice ini pada loket pendaftaran untuk ditukarkan dengan jersey, nomor dada dan tiket wisata Dieng Banjarnegara
+                                        </i>
+                                    </li>
+                                    <li>
+                                        <i>
+                                        Penukaran dilaksanakan mulai tanggal 28 Oktober 2023
+                                        </i>
+                                    </li>
+                                    <li>
+                                        <i>
+                                        Loket pendaftaran berada di Museum Kailasa
+                                        </i>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    @endif
 </div>
 @endsection

@@ -163,7 +163,7 @@
                                     <div class="row">
                                         <div class="col-lg-12 col-12">
                                             <div class="form-group">
-                                                <input name="phone_number" type="text" placeholder="Masukan Nomor Handphone" required="required">
+                                                <input name="phone_number" type="number" placeholder="Masukan Nomor Handphone" required="required">
                                             </div>
                                         </div>
                                     </div>
@@ -171,7 +171,7 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-12">
                                             <div class="form-group">
-                                                <input name="nik" type="text" placeholder="Masukan NIK Kamu" required="required">
+                                                <input name="nik" type="number" placeholder="Masukan NIK Kamu" required="required">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-12">

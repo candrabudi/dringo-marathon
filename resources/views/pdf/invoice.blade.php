@@ -6,84 +6,146 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="backend/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="backend/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="backend/css/demo.css" />
+
+    <link rel="stylesheet" href="backend/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
     <style>
         @page {
-            size: 210mm 130mm;
+            size: 210mm 250mm;
         }
-        .header h2{
+
+        th {
+            padding: 10px;
             font-family: Arial, Helvetica, sans-serif;
         }
-        .header span{
+
+        td {
+            color: #333;
+            padding: 10px;
             font-family: Arial, Helvetica, sans-serif;
-        }
-        .header {
-            height: 100px;
-        }
-        thead tr th{
-            /* height: 30px; */
-            font-size: 14px;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #555;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <h2>INVOICE</h2>
-            <span>{{\Carbon\Carbon::parse($check_invoice->created_at)->format('d/m/Y')}}</span>
-            <table style="width: 50%;margin-top:30px; margin-bottom:30px">
+
+    <div class="col-sm-12">
+        <div class="card-body">
+            <table style="width: 100%;">
                 <tr>
-                    <td>Nik</td>
-                    <td>:</td>
-                    <td>{{Auth::user()->userDetail->nik}}</td>
-                </tr>
-                <tr>
-                    <td>Nama</td>
-                    <td>:</td>
-                    <td>{{Auth::user()->name}}</td>
+                    <td style="width: 50%;" class="">
+                        <img src="{{public_path('storage/logo/logo-compress-dringo.webp')}}" style="width: 100px;">
+                    </td>
+                    <td style="width: 50%; line-height:50px;" class="text-end ">
+                        <h1 class="text-end">
+                            INVOICE #{{$check_invoice->id}}
+                        </h1>
+                    </td>
                 </tr>
             </table>
         </div>
-        <hr style="border: 1px dashed #000;margin-top:60px;">
-        <div class="invoice">
-            <table style="width: 100%;">
-                <thead>
-                    <tr>
-                        <th style="width: 50%;">TIPE DAFTAR</th>
-                        <th style="width: 15%;text-align: center;">Qty</th>
-                        <th style="text-align: right">Harga</th>
-                    </tr>
-                </thead>
+    </div>
+    <div class="col-sm-6 ms-auto text-end text-sm-left">
+        <div class="card-body pb-0 px-0 px-md-4">
+            <table class="table info-invoice ms-auto">
                 <tbody>
                     <tr>
-                        <td style="height: 60px;">
-                            Tipe {{$user->userDetail->category}}
+                        <td style="width: 120px;">
+                            INVOICE ID
                         </td>
-                        <td style="text-align: center;">
-                            1
+                        <td class="text-start">: {{$check_invoice->invoice_event_id}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 120px;">
+                            INVOICE DATE
                         </td>
-                        <td style="text-align: right">
-                            {{ Auth::user()->userDetail->category == "Pelajar" ? 100000 : 150000 }}
-                        </td>
+                        <td class="text-start">: {{\Carbon\Carbon::parse($check_invoice->created_at)->format('d/m/Y')}}</td>
                     </tr>
                 </tbody>
             </table>
-            <table style="margin-top:30px; width:100%;">
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="col-12">
+            <table class="table info-invoice">
                 <tbody>
                     <tr>
-                        <td style="width: 50%;text-align: left;">
-                            Total
+                        <td style="width: 180px;">
+                            NIK
                         </td>
-                        <td style="width: 50%;text-align: right;">
-                        {{ Auth::user()->userDetail->category == "Pelajar" ? 100000 : 150000 }}
-                        </td>
+                        <td class="text-start">: {{Auth::user()->userDetail->nik}}</td>
                     </tr>
-                </tbody>   
+                    <tr>
+                        <td style="width: 180px;">
+                            NAMA
+                        </td>
+                        <td class="text-start">: {{Auth::user()->name}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 180px;">
+                            JENIS KELAMIN
+                        </td>
+                        <td class="text-start">: {{Auth::user()->userDetail->gender}}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 180px;">
+                            KATEGORI
+                        </td>
+                        <td class="text-start">: {{Auth::user()->userDetail->category}}</td>
+                    </tr>
+                </tbody>
             </table>
-            <hr style="border: 1px dashed #000;">
+        </div>
+        <div class="col-sm-12 text-start">
+            <div class="card-body pb-0 px-0 px-md-4">
+                <table class="table">
+                    <thead style="background-color: #00a8ff;">
+                        <tr>
+                            <th style="color: #fff" class="text-center">Item</th>
+                            <th style="color: #fff" class="text-center">Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Dieng Marathon Kategori {{Auth::user()->userDetail->category}}
+                            </td>
+                            <td class="text-end">{{ Auth::user()->userDetail->category == "Pelajar" ? "Rp " . number_format(100000,0,',','.') : "Rp " . number_format(150000,0,',','.') }}</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Total
+                            </td>
+                            <td class="text-end">{{ Auth::user()->userDetail->category == "Pelajar" ? "Rp " . number_format(100000,0,',','.') : "Rp " . number_format(150000,0,',','.') }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-sm-12 mt-3 text-start">
+            <p class=""><i>Note:</i></p>
+            <div class="demo-inline-spacing mt-3">
+                <ul>
+                    <li>
+                        <i>
+                            Tunjukan invoice ini pada loket pendaftaran untuk ditukarkan dengan jersey, nomor dada dan tiket wisata Dieng Banjarnegara
+                        </i>
+                    </li>
+                    <li>
+                        <i>
+                            Penukaran dilaksanakan mulai tanggal 28 Oktober 2023
+                        </i>
+                    </li>
+                    <li>
+                        <i>
+                            Loket pendaftaran berada di Museum Kailasa
+                        </i>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>

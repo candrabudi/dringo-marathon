@@ -126,6 +126,6 @@ class HomeController extends Controller
             'height' => 297,
         ]);
     
-        return $pdf->download('invoice_'.$user->name.'.pdf');
+        return $pdf->stream('invoice_'.$user->name.'.pdf');
     }
 }

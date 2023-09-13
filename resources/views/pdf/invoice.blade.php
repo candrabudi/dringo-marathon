@@ -41,7 +41,7 @@
                     </td>
                     <td style="width: 50%; line-height:50px;" class="text-end ">
                         <h1 class="text-end">
-                            INVOICE #{{$check_invoice->id}}
+                            INVOICE
                         </h1>
                     </td>
                 </tr>
@@ -117,9 +117,9 @@
                         </tr>
                         <tr>
                             <td>
-                                Total
+                                <b>Total</b>
                             </td>
-                            <td class="text-end">{{ Auth::user()->userDetail->category == "Pelajar" ? "Rp " . number_format(100000,0,',','.') : "Rp " . number_format(150000,0,',','.') }}</td>
+                            <td class="text-end"><b>{{ Auth::user()->userDetail->category == "Pelajar" ? "Rp " . number_format(100000,0,',','.') : "Rp " . number_format(150000,0,',','.') }}</b></td>
                         </tr>
                     </tbody>
                 </table>

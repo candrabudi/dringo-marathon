@@ -153,11 +153,13 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-12">
                                             <div class="form-group">
+                                                <span>Email</span>
                                                 <input name="email" type="email" placeholder="Masukan Email" required="required">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-12">
                                             <div class="form-group">
+                                                <span>Password</span>
                                                 <input name="password" type="password" placeholder="Masukan Password" required="required">
                                             </div>
                                         </div>
@@ -165,6 +167,7 @@
                                     <div class="row">
                                         <div class="col-lg-12 col-12">
                                             <div class="form-group">
+                                                <span>Nomor Handphone</span>
                                                 <input name="phone_number" type="number" placeholder="Masukan Nomor Handphone" required="required">
                                             </div>
                                         </div>
@@ -173,11 +176,13 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-12">
                                             <div class="form-group">
+                                                <span>NIK</span>
                                                 <input name="nik" type="number" placeholder="Masukan NIK Kamu" required="required">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-12">
                                             <div class="form-group">
+                                                <span>Nama Peserta</span>
                                                 <input name="name" type="text" placeholder="Masukan Nama" required="required">
                                             </div>
                                         </div>
@@ -186,6 +191,7 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-12">
                                             <div class="form-group">
+                                                <span>Kategori</span>
                                                 <select name="category" class="form-control" required id="">
                                                     <option value="">Pilih Kategori</option>
                                                     <option value="Pelajar">Pelajar (SMP/SMA/SMK)</option>
@@ -195,6 +201,7 @@
                                         </div>
                                         <div class="col-lg-6 col-12">
                                             <div class="form-group">
+                                                <span>Jenis Kelamin</span>
                                                 <select name="gender" class="form-control" required id="">
                                                     <option value="">Jenis Kelamin</option>
                                                     <option value="Laki-laki">Laki-laki</option>
@@ -208,17 +215,20 @@
                                     <div class="row">
                                         <div class="col-lg-6 col-12">
                                             <div class="form-group">
+                                                <span>Tempat Lahir</span>
                                                 <input name="birth_place" type="text" placeholder="Masukan Tempat Lahir" required="required">
                                             </div>
                                         </div>
                                         <div class="col-lg-6 col-12">
                                             <div class="form-group">
+                                                <span>Tanggal Lahir</span>
                                                 <input name="birth_date" type="date" placeholder="Masukan Tanggal Lahir" required="required">
                                             </div>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <textarea placeholder="Masukan Alamat Kamu" name="address" id="message-area" class="form-control"></textarea>
+                                        <span>Alamat Peserta</span>
+                                        <textarea placeholder="Masukan Alamat Kamu" name="address" row="2" id="message-area" class="form-control"></textarea>
                                     </div>
                                     <div class="button">
                                         <button type="submit" class="btn ">Daftar</button>

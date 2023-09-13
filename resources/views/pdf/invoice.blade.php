@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Invoice {{Auth::user()->name}}</title>
 
     <link rel="stylesheet" href="backend/vendor/css/core.css" class="template-customizer-core-css" />
     <link rel="stylesheet" href="backend/vendor/css/theme-default.css" class="template-customizer-theme-css" />

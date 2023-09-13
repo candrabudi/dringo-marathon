@@ -71,6 +71,8 @@ class HomeController extends Controller
 
             $statusCode = $response->status();
             if($statusCode != 200){
+                $responseBody = json_decode($response->getBody(), true);
+                return $responseBody;
                 Alert::error('Yah', 'Maaf ada kesalahan, Tidak Bisa Membuat Invoice');
                 return redirect()
                 ->back()
@@ -78,7 +80,6 @@ class HomeController extends Controller
             }
 
             $responseBody = json_decode($response->getBody(), true);
-            
             $invoice = new Invoice();
             $invoice->user_id = $user->id;
             $invoice->invoice_xendit_url = $responseBody['invoice_url'];

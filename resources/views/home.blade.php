@@ -43,6 +43,8 @@
         <div class="card">
             @if($check_invoice->is_paid == 0)
             <span class="badge bg-label-warning p-3">Masih Menunggu Pembayaran</span>
+            @else
+            <span class="badge bg-label-success p-3">Pembayaran Berhasil</span>
             @endif
             <div class="d-flex align-items-end row">
                 <div class="col-sm-12">

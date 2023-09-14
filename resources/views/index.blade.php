@@ -216,14 +216,14 @@
             <div class="row gx">
                 <div class="col">
                     <a href="javascript:void(0)" class="single-sponsor">
-                        <img src="{{ asset('assets/images/logo/logo-etawalin.png') }}" alt="#">
+                        <img src="{{ asset('assets/images/logo/logo-sponsor-01.png') }}" alt="#">
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="faq section">
+    <section class="features section">
         <div class="container">
             <div class="row">
                 <div class="col-12">

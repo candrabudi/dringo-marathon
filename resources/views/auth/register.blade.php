@@ -43,7 +43,7 @@
                         </div>
                         <h4 class="mb-2 mt-5 text-center">Bergabunglah di Maratong Atas Awan Dieng 10K 🚀</h4>
                     </div>
-                    <form id="formAuthentication" class="mb-3"  method="POST" action="{{route('participant.register')}}">
+                    <form id="formAuthentication" class="mb-3" method="POST" action="{{route('participant.register')}}">
                         @csrf
                         <div class="row">
                             <div class="col-lg-6">
@@ -124,6 +124,12 @@
                         <div class="card-body">
                             <button class="btn btn-primary d-grid w-100 fw-bold">Daftar Sekarang</button>
                         </div>
+                        <p class="text-center">
+                            <span>Sudah punya akun ?</span>
+                            <a href="{{route('login')}}">
+                                <span>Login</span>
+                            </a>
+                        </p>
                     </form>
                 </div>
             </div>

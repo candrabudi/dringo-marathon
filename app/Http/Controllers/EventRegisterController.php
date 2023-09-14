@@ -23,8 +23,8 @@ class EventRegisterController extends Controller
 
     public function register(Request $request)
     {
+        DB::beginTransaction();
         try {
-            // Validation rules
             $rules = [
                 'nik' => 'required',
                 'name' => 'required',
@@ -38,7 +38,6 @@ class EventRegisterController extends Controller
                 'category' => 'required',
             ];
 
-            // Validate input data
             $validator = Validator::make($request->all(), $rules);
 
             if ($validator->fails()) {
@@ -47,14 +46,12 @@ class EventRegisterController extends Controller
                     ->withErrors($validator->errors());
             }
 
-            // Create a new user
             $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => bcrypt($request->password),
             ]);
 
-            // Create user details
             $user->userDetail()->create([
                 'phone_number' => $request->phone_number,
                 'gender' => $request->gender,
@@ -63,13 +60,15 @@ class EventRegisterController extends Controller
                 'birth_place' => $request->birth_place,
                 'address' => $request->address,
                 'category' => $request->category,
+                'blood_group' => $request->blood_group,
+                'illness_history' => $request->illness_history,
             ]);
-
-            // Registration successful
+            DB::commit();
             Alert::success('Hore', 'Kamu Sudah Mendaftar Dringo Marathon!');
             return redirect()->route('login');
         } catch (\Exception $e) {
             DB::rollback();
+            return response()->json($e->getMessage());
             Alert::error('Yah', 'Maaf ada kesalahan internal ' . $e->getMessage());
             return redirect()->back()->withInput();
         }

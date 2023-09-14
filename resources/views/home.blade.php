@@ -45,7 +45,7 @@
                 <div class="col-sm-12">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
-                            <img src="{{asset('assets/images/logo/logo-dringo.jpeg')}}" class="d-flex align-items-center" style="width:120px" alt="">
+                            <img src="{{ asset('assets/images/logo/logo-etawalin.png') }}" class="d-flex align-items-center" style="width:120px" alt="">
                             <h1 class="flex-row align-items-center ms-auto">
                                 INVOICE
                             </h1>

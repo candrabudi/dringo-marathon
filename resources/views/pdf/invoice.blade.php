@@ -37,7 +37,7 @@
             <table style="width: 100%;">
                 <tr>
                     <td style="width: 50%;" class="">
-                        <img src="{{public_path('storage/logo/logo-compress-dringo.webp')}}" style="width: 100px;">
+                        <img src="{{public_path('assets/images/logo/logo-etawalin.png')}}" style="width: 150px;">
                     </td>
                     <td style="width: 50%; line-height:50px;" class="text-end ">
                         <h1 class="text-end">

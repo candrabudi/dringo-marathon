@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EventRegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/create-invoice', [App\Http\Controllers\HomeController::class, 'createInvoice'])->name('create_invoice');
 Route::get('/download-invoice', [App\Http\Controllers\HomeController::class, 'downloadInvoice'])->name('download_invoice');
+
+Route::prefix('admin')->group(function ($router) {
+   $router->get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+   $router->get('/participant', [AdminController::class, 'participant'])->name('admin.participant');
+   $router->get('/participant/update/{id}', [AdminController::class, 'update'])->name('admin.update');
+   $router->get('/list-participant', [AdminController::class, 'dataTable'])->name('admin.dataTable');
+});

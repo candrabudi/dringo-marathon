@@ -21,6 +21,9 @@ return new class extends Migration
             $table->date('birth_date');
             $table->text('address');
             $table->enum('category', ['Pelajar', 'Umum']);
+            $table->string('blood_group');
+            $table->string('illness_history')->nullable();
+            $table->tinyInteger('re_registration')->default(0);
             $table->timestamps();
         });
     }

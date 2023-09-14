@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>Dringo Marathon - Serayunes</title>
+    <title>Maraton Atas Awan Dieng 10 K - Serayunews</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
@@ -34,10 +34,9 @@
             <div class="row align-items-center">
                 <div class="col-lg-12">
                     <div class="nav-inner">
-                        <!-- Start Navbar -->
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand" href="index.html">
-                                <img src="assets/images/logo/logo-serayu.png" alt="Logo">
+                                <img src="assets/images/logo/logo-etawalin.png" style="width: 100px;" alt="Logo">
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="toggler-icon"></span>
@@ -81,10 +80,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 offset-lg-3 col-md-12 col-12">
                     <div class="hero-content">
-                        <h5 class="wow zoomIn" data-wow-delay=".2s"><i class="lni lni-map-marker"></i> Dringo Marathon,
-                            Banjarnegara</h5>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Pelaksanaan lomba dilakukan pada, Minggu 29 Oktober 2023</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">Kategori Pelajar SMP dan SMA Putra Putri, <br> Mahasiswa dan Umum Putra dan Putri.</p>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Maraton Atas Awan Dieng 10 K</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Pelaksanaan lomba dilakukan pada, Minggu 29 Oktober 2023</p>
                         <div class="button wow fadeInUp" data-wow-delay=".8s">
                             <a href="#contact-us" class="btn ">Daftar Sekarang</a>
                         </div>
@@ -123,126 +120,110 @@
         </div>
     </div>
 
-    <section id="contact-us">
-        <div class="contact-us section">
-            <div class="container">
-                <div class="inner-content">
-                    <div class="row">
-                        <div class="col-lg-6 col-12">
-                            <div class="contact-widget-wrapper">
-                                <div class="main-title">
-                                    <h2>
-                                        Butuh Bantuan dalam pendaftaran ?
-                                    </h2>
-                                    <p>Hubungi kami jika kamu mengalami kendala dalam pendaftaran untuk mengikuti dringo marathon.</p>
-                                </div>
-                                <div class="contact-widget-block">
-                                    <h3 class="title">Nomor Whatsapp</h3>
-                                    <p>+62 812-2960-6746</p>
-                                </div>
-                                <div class="contact-widget-block">
-                                    <h3 class="title">Email us</h3>
-                                    <p>serayunews@mail.com</p>
-                                </div>
-                            </div>
+    <section class="features section mt-5" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3 class="wow zoomIn" data-wow-delay=".2s">Tentang Pendaftaran ?</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Pendaftaran Peserta</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Pendaftaran akan dimulai pada tanggal 15 September - 20 Oktober 2023 </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="single-featuer">
+                        <img class="shape" src="assets/images/features/shape.svg" alt="#">
+                        <img class="shape2" src="assets/images/features/shape2.svg" alt="#">
+                        <span class="serial">01</span>
+                        <div class="service-icon">
+                            <i class="lni lni-files"></i>
                         </div>
-                        <div class="col-lg-6 col-12">
-                            <div class="contact-form">
-                                <form class="form" method="post" action="{{route('participant.register')}}">
-                                    @csrf
-                                    <div class="row">
-                                        <div class="col-lg-6 col-12">
-                                            <div class="form-group">
-                                                <span>Email</span>
-                                                <input name="email" type="email" placeholder="Masukan Email" required="required">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-12">
-                                            <div class="form-group">
-                                                <span>Password</span>
-                                                <input name="password" type="password" placeholder="Masukan Password" required="required">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-12 col-12">
-                                            <div class="form-group">
-                                                <span>Nomor Handphone</span>
-                                                <input name="phone_number" type="number" placeholder="Masukan Nomor Handphone" required="required">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6 col-12">
-                                            <div class="form-group">
-                                                <span>NIK</span>
-                                                <input name="nik" type="number" placeholder="Masukan NIK Kamu" required="required">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-12">
-                                            <div class="form-group">
-                                                <span>Nama Peserta</span>
-                                                <input name="name" type="text" placeholder="Masukan Nama" required="required">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row">
-                                        <div class="col-lg-6 col-12">
-                                            <div class="form-group">
-                                                <span>Kategori</span>
-                                                <select name="category" class="form-control" required id="">
-                                                    <option value="">Pilih Kategori</option>
-                                                    <option value="Pelajar">Pelajar (SMP/SMA/SMK)</option>
-                                                    <option value="Umum">Umum (Mahasiswa/Umum)</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-12">
-                                            <div class="form-group">
-                                                <span>Jenis Kelamin</span>
-                                                <select name="gender" class="form-control" required id="">
-                                                    <option value="">Jenis Kelamin</option>
-                                                    <option value="Laki-laki">Laki-laki</option>
-                                                    <option value="Perempuan">Perempuan</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                    <div class="row">
-                                        <div class="col-lg-6 col-12">
-                                            <div class="form-group">
-                                                <span>Tempat Lahir</span>
-                                                <input name="birth_place" type="text" placeholder="Masukan Tempat Lahir" required="required">
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 col-12">
-                                            <div class="form-group">
-                                                <span>Tanggal Lahir</span>
-                                                <input name="birth_date" type="date" placeholder="Masukan Tanggal Lahir" required="required">
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <span>Alamat Peserta</span>
-                                        <textarea placeholder="Masukan Alamat Kamu" name="address" row="2" id="message-area" class="form-control"></textarea>
-                                    </div>
-                                    <div class="button">
-                                        <button type="submit" class="btn ">Daftar</button>
-                                    </div>
-                                </form>
-                            </div>
+                        <h3>Biaya Pendaftaran</h3>
+                        <p>Biaya pendaftaran untuk kategori Pelajar sebesar Rp 100.000,- dan biaya pendaftaran Kategori Umum sebesar Rp 150.000,-</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
+                    <div class="single-featuer">
+                        <img class="shape" src="assets/images/features/shape.svg" alt="#">
+                        <img class="shape2" src="assets/images/features/shape2.svg" alt="#">
+                        <span class="serial">02</span>
+                        <div class="service-icon">
+                            <i class="lni lni-clipboard"></i>
                         </div>
+                        <h3>Bonus Spesial</h3>
+                        <p>Setiap peserta yang mendaftar lebih awal mendapatkan fasilitas kaos dan Medali DIENG 10 K MARATON ATAS AWAN 2023.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
+                    <div class="single-featuer">
+                        <img class="shape" src="assets/images/features/shape.svg" alt="#">
+                        <img class="shape2" src="assets/images/features/shape2.svg" alt="#">
+                        <span class="serial">03</span>
+                        <div class="service-icon">
+                            <i class="lni lni-medal-8">
+                            <img src="assets/images/icon/medal.png" style="width: 40px;margin-top: -5px;"  alt="">
+                            </i>
+                          
+                        </div>
+                        <h3>Total Hadiah!</h3>
+                        <p>Total hadiah untuk pelaksanaan perlombaan Maraton Atas Awan Dieng 10K sebesar 100 Juta Rupuah</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="faq section mt-5">
+    <section class="about section" id="route">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 col-12 wow fadeIn" data-wow-delay=".4s">
+                    <div class="about-image">
+                        <img src="assets/images/route/route.png" alt="#">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 wow fadeIn" data-wow-delay=".6s">
+                    <div class="content">
+                        <h4>Latar Belakang</h4>
+                        <h2>Dringo Marathon</h2>
+                        <p>
+                            Lari maraton adalah kegiatan olahraga yang banyak digemari oleh seluruh kalangan, saat ini olahraga lari menjadi satu trend serta sangat polular.
+                        </p>
+                        <p>
+                            Dengan memadukan olahraga dan rekreasi atau Sport Tourism, serta memeriahkan Hari Sumpah Pemuda tahun 2023, kami Serayunews bersama dengan Kodim 0704 Banjarnegara dan KONI Banjarnegara menggagas Loma Lari wisata bertajuk Sport Tourism DIENG 10 K MARATON ATAS AWAN sebagai upaya untuk meningkatkan prestasi dan perkembangan pariwisata di Banjarnegara, serta upaya membangkitkan perekonomian masyarakt desa wisata.
+                        </p>
+                        <p>
+                            Keunikan dan Kekhasan alam dataran tinggi Dieng akan menjadi Nilai dan Daya Tarik bagi Wisatawan untuk dapat berolahraga sambal menikmati sejuknya udara Dieng dan melihat Potensi Wisata wisata alam yang ada di Kabupaten Banjarnegara.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sponsors section" id="sponsor">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-title">
+                        <h3 class="wow zoomIn" data-wow-delay=".2s">Sponsors</h3>
+                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Sponsor Resmi Kami</h2>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Sponsor Dringo Marathon adalah pihak-pihak atau perusahaan yang memberikan dukungan finansial dan berbagai bentuk sponsor untuk mendukung pelaksanaan Dringo Marathon, sebuah acara lari.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row gx">
+                <div class="col">
+                    <a href="javascript:void(0)" class="single-sponsor">
+                        <img src="/assets/images/logo/logo-etawalin.png" alt="#">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq section">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -299,121 +280,6 @@
         </div>
     </section>
 
-    <section class="features section mt-5" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s">Tentang Pendaftaran ?</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Pendaftaran Peserta</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">Pendaftaran akan dimulai pada tanggal 15 September - 20 Oktober 2023 </p>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="single-featuer">
-                        <img class="shape" src="assets/images/features/shape.svg" alt="#">
-                        <img class="shape2" src="assets/images/features/shape2.svg" alt="#">
-                        <span class="serial">01</span>
-                        <div class="service-icon">
-                            <i class="lni lni-files"></i>
-                        </div>
-                        <h3>Registrasi dan Biaya Pendaftaran</h3>
-                        <p>Setiap peserta wajib melakukan registrasi dengan mengisi formulir serta membayar biasa pendaftaran sebesar Rp 150.000,-</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
-                    <div class="single-featuer">
-                        <img class="shape" src="assets/images/features/shape.svg" alt="#">
-                        <img class="shape2" src="assets/images/features/shape2.svg" alt="#">
-                        <span class="serial">02</span>
-                        <div class="service-icon">
-                            <i class="lni lni-clipboard"></i>
-                        </div>
-                        <h3>Bonus Spesial</h3>
-                        <p>Setiap peserta yang mendaftar lebih awal mendapatkan fasilitas kaos dan Medali DIENG 10 K MARATON ATAS AWAN 2023.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
-                    <div class="single-featuer">
-                        <img class="shape" src="assets/images/features/shape.svg" alt="#">
-                        <img class="shape2" src="assets/images/features/shape2.svg" alt="#">
-                        <span class="serial">03</span>
-                        <div class="service-icon">
-                            <i class="lni lni-heart"></i>
-                        </div>
-                        <h3>Lebih dari Sekadar Perlombaan!</h3>
-                        <p>Tiket lomba lari sudah termasuk tiket untuk masuk ke sejumlah objek wisata yang ada di dataran tinggi Dieng Kabupaten Banjarnegara.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="about section" id="route">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 col-12 wow fadeIn" data-wow-delay=".4s">
-                    <div class="about-image">
-                        <img src="assets/images/route/route.png" alt="#">
-                    </div>
-                </div>
-                <div class="col-lg-6 col-12 wow fadeIn" data-wow-delay=".6s">
-                    <div class="content">
-                        <h4>Latar Belakang</h4>
-                        <h2>Dringo Marathon</h2>
-                        <p>
-                            Lari maraton adalah kegiatan olahraga yang banyak digemari oleh seluruh kalangan, saat ini olahraga lari menjadi satu trend serta sangat polular.
-                        </p>
-                        <p>
-                            Dengan memadukan olahraga dan rekreasi atau Sport Tourism, serta memeriahkan Hari Sumpah Pemuda tahun 2023, kami Serayunews bersama dengan Kodim 0704 Banjarnegara dan KONI Banjarnegara menggagas Loma Lari wisata bertajuk Sport Tourism DIENG 10 K MARATON ATAS AWAN sebagai upaya untuk meningkatkan prestasi dan perkembangan pariwisata di Banjarnegara, serta upaya membangkitkan perekonomian masyarakt desa wisata.
-                        </p>
-                        <p>
-                            Keunikan dan Kekhasan alam dataran tinggi Dieng akan menjadi Nilai dan Daya Tarik bagi Wisatawan untuk dapat berolahraga sambal menikmati sejuknya udara Dieng dan melihat Potensi Wisata wisata alam yang ada di Kabupaten Banjarnegara.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="sponsors section" id="sponsor">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-title">
-                        <h3 class="wow zoomIn" data-wow-delay=".2s">Sponsors</h3>
-                        <h2 class="wow fadeInUp" data-wow-delay=".4s">Sponsor Resmi Kami</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">Sponsor Dringo Marathon adalah pihak-pihak atau perusahaan yang memberikan dukungan finansial dan berbagai bentuk sponsor untuk mendukung pelaksanaan Dringo Marathon, sebuah acara lari.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row gx-5">
-                <div class="col">
-                    <a href="javascript:void(0)" class="single-sponsor">
-                        <img src="/assets/images/sponsor/sponsor.png" alt="#">
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="javascript:void(0)" class="single-sponsor">
-                        <img src="/assets/images/sponsor/sponsor.png" alt="#">
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="javascript:void(0)" class="single-sponsor">
-                        <img src="/assets/images/sponsor/sponsor.png" alt="#">
-                    </a>
-                </div>
-                <div class="col">
-                    <a href="javascript:void(0)" class="single-sponsor">
-                        <img src="/assets/images/sponsor/sponsor.png" alt="#">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section class="call-action overlay">
         <div class="container">
             <div class="row align-items-center">
@@ -421,7 +287,7 @@
                     <div class="inner-content">
                         <div class="text">
                             <h5 class="wow zoomIn" data-wow-delay=".2s">Hurry Up!</h5>
-                            <h2 class="wow fadeInUp" data-wow-delay=".4s">Bergabunglah di Dringo Marathon dan Lari Bersama!
+                            <h2 class="wow fadeInUp" data-wow-delay=".4s">Bergabunglah di Dieng Maraton dan Lari Bersama!
                             </h2>
                             <p class="wow fadeInUp" data-wow-delay=".4s">Pendaftaran Mulai Tanggal 15 September - 20 Oktober 2023</p>
                             <p class="wow fadeInUp" data-wow-delay=".6s">mengajak masyarakt untuk ambil bagian dalam acara Dringo Marathon yang tidak hanya tentang lari, tetapi juga tentang mengambil tindakan untuk menjaga kesehatan dan kebugaran.</p>

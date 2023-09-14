@@ -30,7 +30,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-
+        if(Auth::user()->role != "Participant"){
+            return redirect()->route('admin.dashboard');
+        }
         $check_invoice = Invoice::where('user_id', Auth::user()->id)
             ->first();
 

@@ -16,6 +16,8 @@ class UserDetail extends Model
         'birth_place',
         'address',
         'category',
+        'blood_group',
+        'illness_history',
     ];
 
 }

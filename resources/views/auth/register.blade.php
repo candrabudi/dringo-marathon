@@ -37,7 +37,7 @@
                 <div class="card card-body">
                     <div class="app-brand justify-content-center">
                         <a href="/" class="app-brand-link gap-2">
-                            <img src="/assets/images/logo/logo-etawalin.png" style="width: 200px;" alt="#">
+                            <img src="{{ asset('assets/images/logo/logo-etawalin.png') }}" style="width: 200px;" alt="#">
                         </a>
                     </div>
                 </div>

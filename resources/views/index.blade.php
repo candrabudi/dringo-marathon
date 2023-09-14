@@ -153,7 +153,7 @@
                             <i class="lni lni-clipboard"></i>
                         </div>
                         <h3>Bonus Spesial</h3>
-                        <p>Setiap peserta yang mendaftar lebih awal mendapatkan fasilitas kaos dan Medali DIENG 10 K MARATON ATAS AWAN 2023.</p>
+                        <p>Setiap peserta mendapatkan fasilitas kaos, air minum, Medali bagi peserta yg sampai finish</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
@@ -168,7 +168,7 @@
                           
                         </div>
                         <h3>Total Hadiah!</h3>
-                        <p>Total hadiah untuk pelaksanaan perlombaan Maraton Atas Awan Dieng 10K sebesar 100 Juta Rupuah</p>
+                        <p>Total hadiah untuk pelaksanaan perlombaan Maraton Atas Awan Dieng 10K sebesar 100 Juta Rupiah</p>
                     </div>
                 </div>
             </div>
@@ -186,12 +186,12 @@
                 <div class="col-lg-6 col-12 wow fadeIn" data-wow-delay=".6s">
                     <div class="content">
                         <h4>Latar Belakang</h4>
-                        <h2>Dringo Marathon</h2>
+                        <h2>Maraton Atas Awan Dieng 10K</h2>
                         <p>
-                            Lari maraton adalah kegiatan olahraga yang banyak digemari oleh seluruh kalangan, saat ini olahraga lari menjadi satu trend serta sangat polular.
+                            Lari maraton adalah kegiatan olahraga yang banyak digemari oleh seluruh kalangan, saat ini olahraga lari menjadi satu trend serta sangat poluler.
                         </p>
                         <p>
-                            Dengan memadukan olahraga dan rekreasi atau Sport Tourism, serta memeriahkan Hari Sumpah Pemuda tahun 2023, kami Serayunews bersama dengan Kodim 0704 Banjarnegara dan KONI Banjarnegara menggagas Loma Lari wisata bertajuk Sport Tourism DIENG 10 K MARATON ATAS AWAN sebagai upaya untuk meningkatkan prestasi dan perkembangan pariwisata di Banjarnegara, serta upaya membangkitkan perekonomian masyarakt desa wisata.
+                            Dengan memadukan olahraga dan rekreasi atau Sport Tourism, serta memeriahkan Hari Sumpah Pemuda tahun 2023, kami Serayunews bersama dengan Kodim 0704 Banjarnegara dan KONI Banjarnegara menggagas Lomba Lari wisata bertajuk Sport Tourism DIENG 10 K MARATON ATAS AWAN sebagai upaya untuk meningkatkan prestasi dan perkembangan pariwisata di Banjarnegara, serta upaya membangkitkan perekonomian masyarakt desa wisata.
                         </p>
                         <p>
                             Keunikan dan Kekhasan alam dataran tinggi Dieng akan menjadi Nilai dan Daya Tarik bagi Wisatawan untuk dapat berolahraga sambal menikmati sejuknya udara Dieng dan melihat Potensi Wisata wisata alam yang ada di Kabupaten Banjarnegara.
@@ -209,7 +209,7 @@
                     <div class="section-title">
                         <h3 class="wow zoomIn" data-wow-delay=".2s">Sponsors</h3>
                         <h2 class="wow fadeInUp" data-wow-delay=".4s">Sponsor Resmi Kami</h2>
-                        <p class="wow fadeInUp" data-wow-delay=".6s">Sponsor Dringo Marathon adalah pihak-pihak atau perusahaan yang memberikan dukungan finansial dan berbagai bentuk sponsor untuk mendukung pelaksanaan Dringo Marathon, sebuah acara lari.</p>
+                        <p class="wow fadeInUp" data-wow-delay=".6s">Sponsor Maraton Atas Awan Dieng 10K adalah pihak-pihak atau perusahaan yang memberikan dukungan finansial dan berbagai bentuk sponsor untuk mendukung pelaksanaan Maraton Atas Awan Dieng 10K, sebuah acara lari.</p>
                     </div>
                 </div>
             </div>
@@ -290,7 +290,7 @@
                             <h2 class="wow fadeInUp" data-wow-delay=".4s">Bergabunglah di Dieng Maraton dan Lari Bersama!
                             </h2>
                             <p class="wow fadeInUp" data-wow-delay=".4s">Pendaftaran Mulai Tanggal 15 September - 20 Oktober 2023</p>
-                            <p class="wow fadeInUp" data-wow-delay=".6s">mengajak masyarakt untuk ambil bagian dalam acara Dringo Marathon yang tidak hanya tentang lari, tetapi juga tentang mengambil tindakan untuk menjaga kesehatan dan kebugaran.</p>
+                            <p class="wow fadeInUp" data-wow-delay=".6s">mengajak masyarakt untuk ambil bagian dalam acara Maraton Atas Awan Dieng 10K yang tidak hanya tentang lari, tetapi juga tentang mengambil tindakan untuk menjaga kesehatan dan kebugaran.</p>
                         </div>
                         <div class="button wow fadeInUp" data-wow-delay=".8s">
                             <a href="{{route('register')}}" class="btn">Daftar Sekarang</a>

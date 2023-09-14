@@ -19,14 +19,14 @@
                             </button>
                         </form>
                         @else
-                            @if($check_invoice->is_paid == 1)
-                                <p>Silahkan tunjukan invoice ini ke loket pendaftaran, untuk ditukarkan dengan jersey, tiket wisata disekitar area dieng, dan nomor dada.</p>
-                                <p>Penukaran dilakukan tanggal 28 Oktober 2023</p>
-                            @else
-                                <p class="mb-4">
-                                    Silahkan melakukan pembayaran, untuk menyelesaikan pendaftaran dengan biaya sebesar <b>{{ Auth::user()->userDetail->category == "Pelajar" ? "Rp 100.000" : "Rp 150.000" }}</b>
-                                </p>
-                            @endif
+                        @if($check_invoice->is_paid == 1)
+                        <p>Silahkan tunjukan invoice ini ke loket pendaftaran, untuk ditukarkan dengan jersey, tiket wisata disekitar area dieng, dan nomor dada.</p>
+                        <p>Penukaran dilakukan tanggal 28 Oktober 2023</p>
+                        @else
+                        <p class="mb-4">
+                            Silahkan melakukan pembayaran, untuk menyelesaikan pendaftaran dengan biaya sebesar <b>{{ Auth::user()->userDetail->category == "Pelajar" ? "Rp 100.000" : "Rp 150.000" }}</b>
+                        </p>
+                        @endif
                         @endif
                     </div>
                 </div>
@@ -41,6 +41,9 @@
     @if($check_invoice)
     <div class="col-lg-6 mb-4 order-0">
         <div class="card">
+            @if($check_invoice->is_paid == 0)
+            <span class="badge bg-label-warning p-3">Masih Menunggu Pembayaran</span>
+            @endif
             <div class="d-flex align-items-end row">
                 <div class="col-sm-12">
                     <div class="card-body">
@@ -132,12 +135,12 @@
                                     </li>
                                     <li>
                                         <i>
-                                        Penukaran dilaksanakan mulai tanggal 28 Oktober 2023
+                                            Penukaran dilaksanakan mulai tanggal 28 Oktober 2023
                                         </i>
                                     </li>
                                     <li>
                                         <i>
-                                        Loket pendaftaran berada di Museum Kailasa
+                                            Loket pendaftaran berada di Museum Kailasa
                                         </i>
                                     </li>
                                 </ul>
@@ -148,9 +151,12 @@
                         </div>
                         @else
                         <div class="d-grid gap-2 col-lg-12 mx-auto mt-3">
-                            <a href="{{$check_invoice->invoice_xendit_url}}" target="_blank" class="btn btn-lg btn-outline-danger mt-3">
-                                Bayar Sekarang
-                            </a>
+                            <div class="form-group">
+                                <a href="{{$check_invoice->invoice_xendit_url}}" target="_blank" class="btn btn-lg btn-outline-danger mt-3">
+                                    Bayar Sekarang
+                                </a>
+                                <a href="#" class="btn btn-lg btn-outline-info mt-3" onclick="location.href = location.href;">Cek Status Pembayaran</a>
+                            </div>
                         </div>
                         @endif
                     </div>

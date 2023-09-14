@@ -36,7 +36,7 @@
                     <div class="nav-inner">
                         <nav class="navbar navbar-expand-lg">
                             <a class="navbar-brand" href="index.html">
-                                <img src="assets/images/logo/logo-etawalin.png" style="width: 100px;" alt="Logo">
+                                <img src="{{ asset('assets/images/logo/logo-etawalin.png') }}" style="width: 100px;" alt="Logo">
                             </a>
                             <button class="navbar-toggler mobile-menu-btn" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="toggler-icon"></span>
@@ -83,7 +83,7 @@
                         <h2 class="wow fadeInUp" data-wow-delay=".4s">Maraton Atas Awan Dieng 10 K</h2>
                         <p class="wow fadeInUp" data-wow-delay=".6s">Pelaksanaan lomba dilakukan pada, Minggu 29 Oktober 2023</p>
                         <div class="button wow fadeInUp" data-wow-delay=".8s">
-                            <a href="#contact-us" class="btn ">Daftar Sekarang</a>
+                            <a href="{{route('register')}}" class="btn ">Daftar Sekarang</a>
                         </div>
                     </div>
                 </div>
@@ -134,8 +134,8 @@
             <div class="row">
                 <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
                     <div class="single-featuer">
-                        <img class="shape" src="assets/images/features/shape.svg" alt="#">
-                        <img class="shape2" src="assets/images/features/shape2.svg" alt="#">
+                        <img class="shape" src="{{ asset('assets/images/features/shape.svg') }}" alt="#">
+                        <img class="shape2" src="{{ asset('assets/images/features/shape2.svg') }}" alt="#">
                         <span class="serial">01</span>
                         <div class="service-icon">
                             <i class="lni lni-files"></i>
@@ -146,8 +146,8 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".4s">
                     <div class="single-featuer">
-                        <img class="shape" src="assets/images/features/shape.svg" alt="#">
-                        <img class="shape2" src="assets/images/features/shape2.svg" alt="#">
+                        <img class="shape" src="{{ asset('assets/images/features/shape.svg') }}" alt="#">
+                        <img class="shape2" src="{{ asset('assets/images/features/shape2.svg') }}" alt="#">
                         <span class="serial">02</span>
                         <div class="service-icon">
                             <i class="lni lni-clipboard"></i>
@@ -158,8 +158,8 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-12 wow fadeInUp" data-wow-delay=".2s">
                     <div class="single-featuer">
-                        <img class="shape" src="assets/images/features/shape.svg" alt="#">
-                        <img class="shape2" src="assets/images/features/shape2.svg" alt="#">
+                        <img class="shape" src="{{ asset('assets/images/features/shape.svg') }}" alt="#">
+                        <img class="shape2" src="{{ asset('assets/images/features/shape2.svg') }}" alt="#">
                         <span class="serial">03</span>
                         <div class="service-icon">
                             <i class="lni lni-medal-8">
@@ -180,7 +180,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-12 wow fadeIn" data-wow-delay=".4s">
                     <div class="about-image">
-                        <img src="assets/images/route/route.png" alt="#">
+                        <img src="{{ asset('assets/images/route/route.png') }}" alt="#">
                     </div>
                 </div>
                 <div class="col-lg-6 col-12 wow fadeIn" data-wow-delay=".6s">
@@ -216,7 +216,7 @@
             <div class="row gx">
                 <div class="col">
                     <a href="javascript:void(0)" class="single-sponsor">
-                        <img src="/assets/images/logo/logo-etawalin.png" alt="#">
+                        <img src="{{ asset('assets/images/logo/logo-etawalin.png') }}" alt="#">
                     </a>
                 </div>
             </div>
@@ -293,7 +293,7 @@
                             <p class="wow fadeInUp" data-wow-delay=".6s">mengajak masyarakt untuk ambil bagian dalam acara Dringo Marathon yang tidak hanya tentang lari, tetapi juga tentang mengambil tindakan untuk menjaga kesehatan dan kebugaran.</p>
                         </div>
                         <div class="button wow fadeInUp" data-wow-delay=".8s">
-                            <a href="#contact-us" class="btn">Daftar Sekarang<i class="lni lni-ticket"></i></a>
+                            <a href="{{route('register')}}" class="btn">Daftar Sekarang<i class="lni lni-ticket"></i></a>
                         </div>
                     </div>
                 </div>

@@ -61,7 +61,7 @@
                                     </li>
                                 </ul>
                                 <div class="button-login">
-                                    <a href="{{route('login')}}" target="_blank" class="btn">Login&nbsp;<i class="lni lni-ticket"></i></a>
+                                    <a href="{{route('login')}}" target="_blank" class="btn">Login</a>
                                 </div>
                             </div>
                         </nav>
@@ -293,7 +293,7 @@
                             <p class="wow fadeInUp" data-wow-delay=".6s">mengajak masyarakt untuk ambil bagian dalam acara Dringo Marathon yang tidak hanya tentang lari, tetapi juga tentang mengambil tindakan untuk menjaga kesehatan dan kebugaran.</p>
                         </div>
                         <div class="button wow fadeInUp" data-wow-delay=".8s">
-                            <a href="{{route('register')}}" class="btn">Daftar Sekarang<i class="lni lni-ticket"></i></a>
+                            <a href="{{route('register')}}" class="btn">Daftar Sekarang</a>
                         </div>
                     </div>
                 </div>

@@ -10,7 +10,7 @@
 
     <meta name="description" content="" />
 
-    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/images/logo/logo-etawalin.png') }}" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

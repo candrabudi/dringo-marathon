@@ -34,14 +34,15 @@
     <div class="container-xxl">
         <div class="authentication-wrapper container-p-y">
             <div class="authentication-inner">
-                <div class="card card-body">
-                    <div class="app-brand justify-content-center">
-                        <a href="/" class="app-brand-link gap-2">
-                            <img src="{{ asset('assets/images/logo/logo-etawalin.png') }}" style="width: 200px;" alt="#">
-                        </a>
-                    </div>
-                </div>
                 <div class="card">
+                    <div class="card-body">
+                        <div class="app-brand justify-content-center">
+                            <a href="/" class="app-brand-link gap-2">
+                                <img src="{{ asset('assets/images/logo/logo-etawalin.png') }}" style="width: 200px;" alt="#">
+                            </a>
+                        </div>
+                        <h4 class="mb-2 mt-5 text-center">Bergabunglah di Maratong Atas Awan Dieng 10K 🚀</h4>
+                    </div>
                     <form id="formAuthentication" class="mb-3"  method="POST" action="{{route('participant.register')}}">
                         @csrf
                         <div class="row">
@@ -121,7 +122,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <button class="btn btn-primary d-grid w-100">Sign up</button>
+                            <button class="btn btn-primary d-grid w-100 fw-bold">Daftar Sekarang</button>
                         </div>
                     </form>
                 </div>

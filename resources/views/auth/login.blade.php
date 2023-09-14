@@ -31,8 +31,12 @@
             <div class="authentication-inner">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="mb-2">Halo Peserta! 👋</h4>
-                        <p class="mb-4">Login untuk menyelesaikan pendaftaran</p>
+                        <div class="app-brand justify-content-center">
+                            <a href="/" class="app-brand-link gap-2">
+                                <img src="{{ asset('assets/images/logo/logo-etawalin.png') }}" style="width: 120px;" alt="#">
+                            </a>
+                        </div>
+                        <h4 class="mb-2 text-center">Halo Pejuang Maraton<br> Dieng 10K! 👋</h4>
 
                         <form id="formAuthentication" class="mb-3" method="POST" action="{{ route('login') }}">
                             @csrf

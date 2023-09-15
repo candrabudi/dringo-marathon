@@ -72,7 +72,7 @@
                                         <input name="birth_place" type="text" class="form-control" placeholder="Masukan Tempat Lahir" required="required">
                                     </div>
                                     <div class="mb-3">
-                                        <label for="birth_date" class="form-label">Tempat Lahir</label>
+                                        <label for="birth_date" class="form-label">Tanggal Lahir</label>
                                         <input name="birth_date" type="date" class="form-control" placeholder="Masukan Tanggal Lahir" required="required">
                                     </div>
                                 </div>

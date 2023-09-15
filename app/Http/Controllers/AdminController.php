@@ -35,6 +35,17 @@ class AdminController extends Controller
     {
         return view('admin.participant');
     }
+    public function participantDetail($id)
+    {
+        $user = User::where('id', $id)
+            ->select('name', 'email')
+            ->first()
+            ->toArray();
+        $user['user_detail'] = UserDetail::where('user_id', $id)
+            ->first();
+
+        return $user;
+    }
 
     public function dataTable()
     {
@@ -57,6 +68,7 @@ class AdminController extends Controller
                 'category' => $new['category'],
                 'gender' => $new['gender'],
                 're_registration' => $new['re_registration'] == 1 ? "Sudah" : "Belum",
+                'is_registration' => $new['re_registration'] == 1 ? true : false,
             ];
         }, $fetch);
 

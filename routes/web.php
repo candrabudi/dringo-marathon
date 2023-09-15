@@ -28,6 +28,7 @@ Route::get('/download-invoice', [App\Http\Controllers\HomeController::class, 'do
 Route::prefix('admin')->group(function ($router) {
    $router->get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
    $router->get('/participant', [AdminController::class, 'participant'])->name('admin.participant');
+   $router->get('/participant/detail/{id}', [AdminController::class, 'participantDetail'])->name('admin.participant.detail');
    $router->post('/participant/update/{id}', [AdminController::class, 'update'])->name('admin.update');
    $router->get('/list-participant', [AdminController::class, 'dataTable'])->name('admin.dataTable');
 });
